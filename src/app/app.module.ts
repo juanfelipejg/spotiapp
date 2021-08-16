@@ -13,6 +13,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 //Routes
 import { ROUTES } from './app.routes';
 import { NoimagesPipe } from './pipes/noimages.pipe';
+import { CardComponent } from './components/card/card.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NoimagesPipe } from './pipes/noimages.pipe';
     ArtistComponent,
     NavbarComponent,
     NoimagesPipe,
+    CardComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

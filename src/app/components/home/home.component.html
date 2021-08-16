@@ -1,13 +1,4 @@
-<div class="container col col-md-4">
-  <div *ngFor="let release of newReleases" class="card" style="width: 18rem;">
-    <img [src]="release?.images | noimages" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{release.name}}</h5>
-      <p class="card-text">
-        <span *ngFor="let artist of release?.artists" class="badge bg-primary">{{artist.name}}</span>
-      </p>
-    </div>
-  </div>
-</div>
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+<app-card [items]="newReleases"></app-card>
 
 
