@@ -17,7 +17,7 @@ export class SearchComponent {
 
   search(term: string) {
     this.loading = this.validateTerm(term);
-    this.spotify.getArtist(term).subscribe( (data: any) => {
+    this.spotify.getArtists(term).subscribe( (data: any) => {
       this.artists = data
       this.loading = false; 
     })
