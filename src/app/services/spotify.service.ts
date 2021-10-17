@@ -14,7 +14,7 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/${query}`;
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQB3S_scYAM0wg4flBi1QskLZHVkrtvjkQbo9osfYvOewHAXJyVqKhteLKipdEtzC852FY4F_58WABp8vm1HRVWHqIxs-XBfWydRYi-Y7jckwH-62lskK6vJjYJxCeTbiLBsz8QSaHnDLzmwDzT_DrW9bvIxNbg'
+      'Authorization': 'Bearer BQBmT92WHt--KNhHFuJyiGzZ8r70uGhH-R-JujSur_xBM5-grPivkZCDK9H_MsmQzu4TbIQuZGdrR2B_mjtIBwRGhekNCTULr8ss8IjJxcvuDH2odBNztRzpcQtnuu49OhDiuY4LCy56MLermX9tHBDs5-8zYgE'
     });
 
     return this.http.get(url, { headers });
@@ -31,6 +31,11 @@ export class SpotifyService {
 
   getArtist(id: string): Observable<any> {
     return this.getQuery(`artists/${id}`)
+  }
+
+  getTopTracks(id: string): Observable<any> {
+    return this.getQuery(`artists/${id}/top-tracks?country=us`)
+      .pipe( map((data: any) => data.tracks));
   }
   
 }
