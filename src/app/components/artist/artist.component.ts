@@ -11,6 +11,7 @@ export class ArtistComponent {
   public artist: any;
   public topTracks: any[] = []; 
   loading: boolean;
+  topTracks: any[] = [];
 
   constructor(private router: ActivatedRoute, private spotify: SpotifyService) {
     this.loading = true;
@@ -26,7 +27,13 @@ export class ArtistComponent {
   }
 
   getTopTracks(id: string) {
+<<<<<<< HEAD
     this.spotify.getTopTracks(id).subscribe(topTracks => {
+=======
+    this.spotify.getTopTracks(id).subscribe(
+      (topTracks) => {
+      console.log(topTracks);      
+>>>>>>> a007bf2455fe73a1d46295a174b28f56383267c3
       this.topTracks = topTracks;
     })
   }
